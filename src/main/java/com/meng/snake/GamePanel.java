@@ -9,6 +9,7 @@ import java.awt.event.KeyListener;
 
 public class GamePanel extends JPanel implements KeyListener, ActionListener {
     int length;//蛇的长度
+//    test
     int[] snakeX = new int[600];//蛇的坐标x
     int[] snakeY = new int[500];//蛇的坐标y
     String fx;//小蛇默认方向向右
@@ -38,22 +39,22 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);//清屏
         this.setBackground(Color.white);//设置背景的颜色
-        Data.head.paintIcon(this,g,25,11);//绘制头部的广告栏
+        main.java.com.meng.snake.Data.head.paintIcon(this,g,25,11);//绘制头部的广告栏
         g.fillRect(25,75,850,600);//绘制游戏区域
 
         //画一条静态的小蛇
         if (fx.equals("R")){
-            Data.right.paintIcon(this,g,snakeX[0],snakeY[0]);
+            main.java.com.meng.snake.Data.right.paintIcon(this,g,snakeX[0],snakeY[0]);
         }else if(fx.equals("L")){
-            Data.left.paintIcon(this,g,snakeX[0],snakeY[0]);
+            main.java.com.meng.snake.Data.left.paintIcon(this,g,snakeX[0],snakeY[0]);
         }else if(fx.equals("U")){
-            Data.up.paintIcon(this,g,snakeX[0],snakeY[0]);
+            main.java.com.meng.snake.Data.up.paintIcon(this,g,snakeX[0],snakeY[0]);
         }else if(fx.equals("D")){
-            Data.down.paintIcon(this,g,snakeX[0],snakeY[0]);
+            main.java.com.meng.snake.Data.down.paintIcon(this,g,snakeX[0],snakeY[0]);
         }
 
         for (int i = 1; i <length ; i++) {
-            Data.body.paintIcon(this,g,snakeX[i],snakeY[i]);//蛇的身体长度通过length控制
+            main.java.com.meng.snake.Data.body.paintIcon(this,g,snakeX[i],snakeY[i]);//蛇的身体长度通过length控制
         }
         //游戏提示：是否开始
         if (isStart == false) {
